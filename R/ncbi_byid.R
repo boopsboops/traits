@@ -70,11 +70,15 @@ ncbi_byid <- function(ids, format=NULL, verbose=TRUE) {
     organelle <- xml_helper(z, './/GBQualifier[GBQualifier_name = "organelle"]/GBQualifier_value')
     lat.long <- xml_helper(z, './/GBQualifier[GBQualifier_name = "lat_lon"]/GBQualifier_value')
     country <- xml_helper(z, './/GBQualifier[GBQualifier_name = "country"]/GBQualifier_value')
+    collection.date <- xml_helper(z, './/GBQualifier[GBQualifier_name = "collection_date"]/GBQualifier_value')
+    collected.by <- xml_helper(z, './/GBQualifier[GBQualifier_name = "collected_by"]/GBQualifier_value')
+    identified.by <- xml_helper(z, './/GBQualifier[GBQualifier_name = "identified_by="]/GBQualifier_value')
     first.author <- xml_helper(z, './/GBReference[GBReference_reference = "1"]/GBReference_authors/GBAuthor')
     paper.title <- xml_helper(z, './/GBReference[GBReference_reference = "1"]/GBReference_title')
     journal <- xml_helper(z, './/GBReference[GBReference_reference = "1"]/GBReference_journal')
     data.frame(taxon = tax, taxonomy = taxonomy, gene_desc = def, organelle = organelle, gi_no = gi,
     acc_no = acc, keyword = keyword, specimen_voucher = voucher, lat_lon = lat.long, country = country,
+    collection_date = collection.date, collected_by = collected.by, identified_by = identified.by,
     paper_title = paper.title, journal = journal, first_author = first.author, uploaded_date = date,
     length = seqlen, sequence = seq, stringsAsFactors = FALSE)
   })
