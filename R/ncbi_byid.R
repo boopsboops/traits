@@ -72,7 +72,7 @@ ncbi_byid <- function(ids, format=NULL, verbose=TRUE) {
     country <- xml_helper(z, './/GBQualifier[GBQualifier_name = "country"]/GBQualifier_value')
     collection.date <- xml_helper(z, './/GBQualifier[GBQualifier_name = "collection_date"]/GBQualifier_value')
     collected.by <- xml_helper(z, './/GBQualifier[GBQualifier_name = "collected_by"]/GBQualifier_value')
-    identified.by <- xml_helper(z, './/GBQualifier[GBQualifier_name = "identified_by="]/GBQualifier_value')
+    identified.by <- xml_helper(z, './/GBQualifier[GBQualifier_name = "identified_by"]/GBQualifier_value')
     first.author <- xml_helper(z, './/GBReference[GBReference_reference = "1"]/GBReference_authors/GBAuthor')
     paper.title <- xml_helper(z, './/GBReference[GBReference_reference = "1"]/GBReference_title')
     journal <- xml_helper(z, './/GBReference[GBReference_reference = "1"]/GBReference_journal')
